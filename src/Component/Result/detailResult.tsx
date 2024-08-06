@@ -17,7 +17,7 @@ const DetailResult = () => {
 
     useEffect(() => {
         const dogId = Number(id);
-        axios.get(`http://backend:8080/dog/${dogId}`, {
+        axios.get(`https://k84e5257d912ba.user-app.krampoline.com/api/${dogId}`, {
             headers : {
                 'Content-Type': 'application/json',
                 'ngrok-skip-browser-warning': '69420'
@@ -36,7 +36,7 @@ const DetailResult = () => {
         if (dogData?.image) {
             const fetchImage = async () => {
                 try {
-                    const response = await fetch(`http://backend:8080${dogData.image}`, {
+                    const response = await fetch(`https://k84e5257d912ba.user-app.krampoline.com/api${dogData.image}`, {
                         headers: {
                             'Content-Type': 'application/json',
                             'ngrok-skip-browser-warning': '69420'
