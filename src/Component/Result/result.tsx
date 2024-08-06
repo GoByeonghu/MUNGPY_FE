@@ -37,7 +37,7 @@ const Result = () => {
         if (dogData?.image) {
             const fetchImage = async () => {
                 try {
-                    const response = await fetch(`https://k84e5257d912ba.user-app.krampoline.com/api${dogData.image}`, {
+                    const response = await fetch(`${baseUrl}/api${dogData.image}`, {
                         headers: {
                             'Content-Type': 'application/json',
                             'ngrok-skip-browser-warning': '69420'
