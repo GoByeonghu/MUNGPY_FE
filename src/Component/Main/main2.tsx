@@ -38,7 +38,7 @@ const Main2:React.FC = () => {
         
         setIsLoading(true);
         try{
-            const response = await axios.post(`${baseUrl}/api/`, formData, {
+            const response = await axios.post(`${baseUrl}/api/dog`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
