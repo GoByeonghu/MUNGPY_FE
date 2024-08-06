@@ -12,6 +12,7 @@ const Main2:React.FC = () => {
     const [imageFile, setImageFile] = useState<File|null>(null);
     const [selectedTraits, setSelectedTraits] = useState<string[]>([]);
     const [isLoading, setIsLoading] = useState(false);
+    const baseUrl = new URL(window.location.href).origin;
 
     useEffect(() => {
         const state = location.state as {selectedOptions: string[]};
@@ -37,7 +38,7 @@ const Main2:React.FC = () => {
         
         setIsLoading(true);
         try{
-            const response = await axios.post('https://k84e5257d912ba.user-app.krampoline.com/api/', formData, {
+            const response = await axios.post(`${baseUrl}/api/`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
