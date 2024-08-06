@@ -17,7 +17,7 @@ const Result = () => {
     const [imageSrc, setImageSrc] = useState('');
 
     useEffect(() => {
-        axios.get(`http://backend:8080/dog/${id}`, {
+        axios.get(`https://k84e5257d912ba.user-app.krampoline.com/api/${id}`, {
             headers : {
                 'Content-Type': 'application/json',
                 'ngrok-skip-browser-warning': '69420'
@@ -36,7 +36,7 @@ const Result = () => {
         if (dogData?.image) {
             const fetchImage = async () => {
                 try {
-                    const response = await fetch(`http://backend:8080${dogData.image}`, {
+                    const response = await fetch(`https://k84e5257d912ba.user-app.krampoline.com/api${dogData.image}`, {
                         headers: {
                             'Content-Type': 'application/json',
                             'ngrok-skip-browser-warning': '69420'
