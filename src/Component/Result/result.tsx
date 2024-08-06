@@ -9,6 +9,7 @@ const Result = () => {
     const {id} = useParams();
     const [dogData, setDogData] = useState<Dog | null>(null);
     const navigator = useNavigate();
+    const baseUrl = new URL(window.location.href).origin;
 
     function NextPage() {
         navigator(`/detail/${id}`);
@@ -17,7 +18,7 @@ const Result = () => {
     const [imageSrc, setImageSrc] = useState('');
 
     useEffect(() => {
-        axios.get(`https://k84e5257d912ba.user-app.krampoline.com/api/${id}`, {
+        axios.get(`${baseUrl}/api/${id}`, {
             headers : {
                 'Content-Type': 'application/json',
                 'ngrok-skip-browser-warning': '69420'
